@@ -25,7 +25,6 @@ function App() {
   const [showIntro, setShowIntro] = useState(true);
   const [fadeOutIntro, setFadeOutIntro] = useState(false);
   const [gradientPosition, setGradientPosition] = useState({ x: 50, y: 50 });
-  
 
   const handleMouseMove = (event) => {
     const { clientX, clientY, currentTarget } = event;
@@ -92,7 +91,11 @@ function App() {
   return (
     <>
       {showIntro ? (
-        <div className={`intro min-h-screen z-[9999] animate__animated flex justify-center items-center text-white bg-black ${fadeOutIntro ? "animate__fadeOut" : ""}`}>
+        <div
+          className={`intro min-h-screen z-[9999] animate__animated flex justify-center items-center text-white bg-black ${
+            fadeOutIntro ? "animate__fadeOut" : ""
+          }`}
+        >
           <div>
             <h1
               className={`inline-block  text-2xl lg:text-3xl ${`animate__animated ${
@@ -124,8 +127,6 @@ function App() {
                 ? `#383838 2%, #171717 70%`
                 : `#C7C7C7 2%, #E8E8E8 70%`
             })`,
-            opacity: isDarkMode ? 0 : 1,
-            transition: "background 1s ease-out, opacity 0.7s ease-in-out",
           }}
         >
           <div
@@ -182,7 +183,7 @@ function App() {
                     <section className=" pt-[15px] ">
                       <div className="flex items-center    gap-1">
                         <div>
-                          <h1 className="transition-all ease-out duration-700  text-4xl xl:tracking-widest dark:text-gray-300 my-name text-gray-800 font-semibold lg:text-5xl">
+                          <h1 className="transition-all animate-heartbeat  ease-out duration-700   text-4xl xl:tracking-widest dark:text-gray-300 my-name text-gray-800 font-semibold lg:text-5xl">
                             Angelo Manalo
                           </h1>
                         </div>
@@ -203,9 +204,13 @@ function App() {
                       <p className="transition-all ease-out duration-700 lg:text-lg text-gray-800 dark:text-gray-300 font-extralight">
                         Web Developer
                       </p>
-                      <p className="text-green-600 italic lg:text-lg">
-                        Good Health and Well-Being
-                      </p>
+                      <div className="sdg-container  w-[267px] lg:w-[295px]   lg:">
+                      <div class="title dark:text-gray-300 mr-1 font-extralight lg:text-lg ">GOAL 3:</div>
+                     
+                      <div class="reveal">
+                        <span className="text-green-600 italic lg:text-lg">Good Health and Well-being</span>
+                      </div>
+                      </div>
                       <ul className="flex gap-3 items-center">
                         <li className="w-[21px] lg:w-[26px] cursor-pointer">
                           <a
